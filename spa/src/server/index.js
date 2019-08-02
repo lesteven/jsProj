@@ -7,8 +7,8 @@ app.use(morgan('dev'));
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static('dist'));
-app.use(express.static('src/client/public'));
+app.use(express.static(path.resolve(__dirname, '../../dist')));
+app.use(express.static(path.resolve(__dirname, '../client/public')));
 
 app.use('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/public/index.html'));
