@@ -2,12 +2,19 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const assetsPath = path.resolve(__dirname, '../dist');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 /* Shared webpack between clientDev and clientProd.
 *  - shares entry, output, css
 */
 
 module.exports = {
+  optimization: {
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   entry: {
     client: [
       '@babel/polyfill',
