@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import MappedRoutes from '../comp/MappedRoutes';
+import NavBar from '../comp/NavBar';
+import routes from '../routes';
+import { BrowserRouter } from 'react-router-dom';
 
 class Index extends Component{
 	render(){
 		return(
 			<div>
-				<p>Hello world!</p>
+        <BrowserRouter>
+          <NavBar />
+          <MappedRoutes routes = { routes } />
+        </BrowserRouter>
 			</div>
 		)
 	}
