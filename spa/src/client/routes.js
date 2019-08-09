@@ -1,5 +1,6 @@
 import Home from './views/home/Home';
 import About from './views/about/About';
+import Dynam from './views/dynam/Dynam';
 
 const routes = [
   {
@@ -15,6 +16,13 @@ const routes = [
     component: About,
     exact: true,
     title: 'About',
+  },
+  {
+    prefix: '',
+    path: '/dynam',
+    component: Dynam,
+    exact: true,
+    title: 'Dynam',
   },
 ]
 
