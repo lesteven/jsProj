@@ -5,6 +5,7 @@ import Hooks from './views/hooks/Hooks';
 import LifeCy from './views/lifecy/LifeCy';
 import Red from './views/red/Red';
 import Blue from './views/blue/Blue';
+import FormEx from './views/formex/FormEx';
 
 const routes = [
   {
@@ -55,6 +56,13 @@ const routes = [
     component: Blue,
     exact: true,
     title: 'Blue',
+  },
+  {
+    prefix: '',
+    path: '/formex',
+    component: FormEx,
+    exact: true,
+    title: 'FormEx',
   },
 ]
 
