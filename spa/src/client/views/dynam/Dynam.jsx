@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 
 const Dynam = () => {
-  const [data, setData] = useState({ hits: [] });
+  const [json, setData] = useState({data:[]});
 
-  useEffect(async() => {
-    const result = await fetch('/data');
-    const json = await result.json();
-    setData(result.data);
+  useEffect(() => {
+    async function getData() {
+      const result = await fetch('/data');
+      const json = await result.json();
+      setData(json);
+    };
+    getData();
   }, []);
 
   return (
     <div>
       <p> Hello Dynam! </p>
-      { data.hits.map(each => 
-        <p key={each}> {each}</p>
-      )}
+      { json.data.map(each => <p key = {each}> { each } </p> )} 
     </div>
   )
 }
