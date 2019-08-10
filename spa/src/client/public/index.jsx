@@ -4,18 +4,19 @@ import MappedRoutes from '../comp/MappedRoutes';
 import NavBar from '../comp/NavBar';
 import routes from '../routes';
 import { BrowserRouter } from 'react-router-dom';
+import css from './index.css';
+import { Provider } from 'react-redux';
+import configureStore from '../redux/store';
 
-class Index extends Component{
-	render(){
-		return(
-			<div>
-        <BrowserRouter>
-          <NavBar />
-          <MappedRoutes routes = { routes } />
-        </BrowserRouter>
-			</div>
-		)
-	}
+const Index = () => {
+  return(
+    <Provider store = { configureStore() }>
+      <BrowserRouter>
+        <NavBar />
+        <MappedRoutes routes = { routes } />
+      </BrowserRouter>
+    </Provider>
+  )
 }
 
 ReactDOM.render(<Index />,document.getElementById('index'));
