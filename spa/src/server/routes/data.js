@@ -10,5 +10,9 @@ data.route('/')
     res.json({data: ['foo','bar','baz']});
   })
 
+data.route('/test')
+  .get(async (req, res) => {
+    res.json(['foo','bar','baz']);
+  })
 
 module.exports = data;
