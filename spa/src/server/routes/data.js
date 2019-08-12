@@ -11,6 +11,8 @@ data.route('/')
   })
   .post(async (req, res) => {
     console.log(req.body);
+    console.log(req.body.username);
+    console.log(req.body.password);
     res.json({'success': 'data posted!'});
   })
 
