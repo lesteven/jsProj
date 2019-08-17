@@ -15,4 +15,3 @@ const test = async() => {
   }
 }
 
-test();
