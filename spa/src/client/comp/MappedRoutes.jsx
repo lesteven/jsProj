@@ -5,7 +5,7 @@ function MappedRoutes({ routes }){
   return (
     <Switch>
       { routes.map(e =>
-          <Route exact = {e.exact} path = {`${e.prefix}${e.path}`}
+          <Route exact = {e.exact} path = {e.path}
             component = {e.component} key = {e.path}/>
       )}
     </Switch>
