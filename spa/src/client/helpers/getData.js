@@ -1,5 +1,4 @@
 
-
 const getData = (url) => async(e) => {
   e.preventDefault();
   console.log(data); 

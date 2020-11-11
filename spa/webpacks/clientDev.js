@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./clientCommon');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
