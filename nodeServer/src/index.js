@@ -2,8 +2,16 @@ const express = require('express');
 const http = require('http');
 const debug = require('debug')('http');
 const apiRoutes = require('./routes/apiRoutes');
+const cors = require('cors');
 
 const app = express();
+
+const corsOptions = {
+  origin: ['http://localhost:8080', 'http://localhost:3000'],
+  credentials: true
+}
+
+app.use(cors(corsOptions));
 
 app.get('/', (req,res) => {
   res.send('Hello World!\n');
