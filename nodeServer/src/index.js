@@ -1,12 +1,15 @@
 const express = require('express');
 const http = require('http');
 const debug = require('debug')('http');
+const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
 
 app.get('/', (req,res) => {
   res.send('Hello World!\n');
 })
+
+app.use('/api', apiRoutes);
 
 
 if (app.get('env') === 'development') {
